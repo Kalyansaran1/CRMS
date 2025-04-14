@@ -2,13 +2,12 @@
 session_start();
 error_reporting(0);
 
-include('includes/dbconnection.php');
+include_once('includes/dbconnection.php');
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
-	<title>Campus Recruitment Management System|| Contact Us</title>
+	<title>Campus Recruitment Management System || Contact Us</title>
 	
 	<script>
 		addEventListener("load", function () {
@@ -27,18 +26,14 @@ include('includes/dbconnection.php');
 	<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 </head>
 
-
 <body>
 	<!-- banner-inner -->
 	<div id="demo-1" class="page-content">
 		<div class="dotts">
 			<div class="header-top">
-			 <?php include_once('includes/header.php');?>
+				<?php include_once('includes/header.php'); ?>
 			</div>
-			<!--/banner-info-w3layouts-->
-			<div class="banner-info-w3layouts text-center">
-			</div>
-			<!--//banner-info-w3layouts-->
+			<div class="banner-info-w3layouts text-center"></div>
 		</div>
 	</div>
 	<ol class="breadcrumb justify-content-left">
@@ -47,54 +42,38 @@ include('includes/dbconnection.php');
 		</li>
 		<li class="breadcrumb-item active">About Us</li>
 	</ol>
-	<!-- banner-text -->
+
 	<!-- contact -->
 	<section class="banner-bottom-wthree pt-lg-5 pt-md-3 pt-3">
 		<div class="inner-sec-w3ls pt-md-5 pt-md-3 pt-3">
-		<!---728x90--->
 			<h3 class="tittle text-center mb-lg-5 mb-3">
-				<span>Get More info</span>About Us</h3>
-				<!---728x90--->
-				<?php 
- $query=mysqli_query($con,"select * from  tblpage where PageType='aboutus'");
- while ($row=mysqli_fetch_array($query)) {
-
-
- ?>
-				<div class="container">
-						<div class="address row mb-5">
-							<div class="col-lg-12 address-grid">
-								<div class="row address-info">
-								
-									<div class="col-md-9 address-right text-left">
-										<h6 class="ad-info text-uppercase mb-2"><?php  echo $row['PageTitle'];?></h6>
-										<p> <?php  echo $row['PageDescription'];?>
-		
-										</p>
-									</div>
-								</div>
+				<span>Get More info</span> About Us</h3>
+			<?php 
+				$query = mysqli_query($con, "select * from tblpage where PageType='aboutus'");
+				while ($row = mysqli_fetch_array($query)) {
+			?>
+			<div class="container">
+				<div class="address row mb-5">
+					<div class="col-lg-12 address-grid">
+						<div class="row address-info">
+							<div class="col-md-9 address-right text-left">
+								<h6 class="ad-info text-uppercase mb-2"><?php echo $row['PageTitle']; ?></h6>
+								<p><?php echo $row['PageDescription']; ?></p>
 							</div>
-							
-							
 						</div>
 					</div>
-					<?php } ?>
-		
+				</div>
+			</div>
+			<?php } ?>
 		</div>
 	</section>
-	<!-- //contact -->
-	<!---728x90--->
-	<!--footer -->
-	 <?php include_once('includes/footer.php');?>
-	<!-- //footer -->
+
+	<?php include_once('includes/footer.php'); ?>
 
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!--//slider-->
-	<!--search jQuery-->
 	<script src="js/classie-search.js"></script>
 	<script src="js/demo1-search.js"></script>
-	<!--//search jQuery-->
 
 	<script>
 		$(document).ready(function () {
@@ -110,8 +89,7 @@ include('includes/dbconnection.php');
 			);
 		});
 	</script>
-	<!-- //dropdown nav -->
-	<!-- password-script -->
+
 	<script>
 		window.onload = function () {
 			document.getElementById("password1").onchange = validatePassword;
@@ -125,15 +103,13 @@ include('includes/dbconnection.php');
 				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
 			else
 				document.getElementById("password2").setCustomValidity('');
-			//empty string means no validation error
 		}
 	</script>
-	<!-- //password-script -->
-	<!-- //js -->
+
 	<script src="js/bootstrap.js"></script>
-	<!--/ start-smoth-scrolling -->
 	<script src="js/move-top.js"></script>
 	<script src="js/easing.js"></script>
+
 	<script>
 		jQuery(document).ready(function ($) {
 			$(".scroll").click(function (event) {
@@ -144,24 +120,14 @@ include('includes/dbconnection.php');
 			});
 		});
 	</script>
+
 	<script>
 		$(document).ready(function () {
-			/*
-									var defaults = {
-										  containerID: 'toTop', // fading element id
-										containerHoverID: 'toTopHover', // fading element hover id
-										scrollSpeed: 1200,
-										easingType: 'linear' 
-									 };
-									*/
-
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});
-
 		});
 	</script>
-	<!--// end-smoth-scrolling -->
 </body>
-
 </html>
+
