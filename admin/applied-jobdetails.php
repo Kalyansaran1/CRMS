@@ -1,16 +1,20 @@
-<?php  
+<?php
 session_start();
 error_reporting(0);
-include('includes/dbconnection.php');
-if (strlen($_SESSION['crmsaid']==0)) {
-  header('location:logout.php');
-  } else{
+include_once 'includes/dbconnection.php';
 
- //update for mesaage
-$vid=$_GET['viewid'];
- $ret=mysqli_query($con,"update tblmessage set IsRead='1' where AppID='$vid'");   
+if (strlen($_SESSION['crmsaid']) == 0) {
+    header('location:logout.php');
+} else {
+    // update message read status
+    $vid = $_GET['viewid'];
+    $ret = mysqli_query($con, "UPDATE tblmessage SET IsRead='1' WHERE AppID='$vid'");
 
+    if (isset($_POST['submit'])) {
+        // your form submission logic here
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
