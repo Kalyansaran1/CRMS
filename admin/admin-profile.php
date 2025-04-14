@@ -99,6 +99,9 @@ if (strlen($_SESSION['crmsaid']) == 0) {
                                         <td><?php echo $row['LastDate']; ?></td>
                                     </tr>
                                     <tr>
+                                        <th scope="col" colspan="4">Information of Candidate</th>
+                                    </tr>
+                                    <tr>
                                         <th scope="row">Full Name</th>
                                         <td><?php echo $row['FullName']; ?></td>
                                         <th scope="row">Email</th>
@@ -132,9 +135,7 @@ if (strlen($_SESSION['crmsaid']) == 0) {
                                         <th scope="row">Resume</th>
                                         <td><a href="../user/images/<?php echo $row['Resume']; ?>" target="_blank">Download</a></td>
                                         <th scope="row">Status</th>
-                                        <td>
-                                            <?php echo ($row['Status'] == '') ? 'Not Responded Yet' : $row['Status']; ?>
-                                        </td>
+                                        <td><?php echo ($row['Status'] == '') ? 'Not Responded Yet' : $row['Status']; ?></td>
                                     </tr>
                                 </table>
 
@@ -144,15 +145,18 @@ if (strlen($_SESSION['crmsaid']) == 0) {
                                     $cnt = 1;
                                 ?>
                                 <table id="datatable" class="table table-bordered dt-responsive nowrap" style="width: 100%;">
-                                    <tr align="center">
-                                        <th colspan="4" style="font-size:18px">Application History</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Message</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Time</th>
-                                    </tr>
+                                    <thead>
+                                        <tr align="center">
+                                            <th scope="col" colspan="4" style="font-size:18px">Application History</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Message</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
                                     <?php while ($row = mysqli_fetch_array($retMsg)) { ?>
                                         <tr>
                                             <td><?php echo $cnt++; ?></td>
@@ -161,6 +165,7 @@ if (strlen($_SESSION['crmsaid']) == 0) {
                                             <td><?php echo $row['ResponseDate']; ?></td>
                                         </tr>
                                     <?php } ?>
+                                    </tbody>
                                 </table>
                                 <?php } ?>
                                 <?php } ?>
