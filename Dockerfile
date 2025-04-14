@@ -10,4 +10,10 @@ RUN a2enmod rewrite
 # Expose port 80 (standard web traffic)
 EXPOSE 80
 
+FROM php:8.1-apache
+
+# Install mysqli extension
+RUN docker-php-ext-install mysqli
+
+
 
