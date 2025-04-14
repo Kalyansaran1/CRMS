@@ -2,9 +2,8 @@
 session_start();
 error_reporting(0);
 
-// ✅ Recommendation: Consider using Composer and autoloading in future
+// 🔁 Suggested: Replace include_once with proper autoloader in future
 // use Includes\DbConnection;
-// For now, keeping the current include
 include_once('includes/dbconnection.php');
 ?>
 <!DOCTYPE html>
@@ -21,9 +20,9 @@ include_once('includes/dbconnection.php');
             window.scrollTo(0, 1);
         }
     </script>
-    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="css/style6.css" rel='stylesheet' type='text/css' />
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/style6.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/fontawesome-all.css" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
@@ -49,8 +48,7 @@ include_once('includes/dbconnection.php');
     <section class="banner-bottom-wthree pt-lg-5 pt-md-3 pt-3">
         <div class="inner-sec-w3ls pt-md-5 pt-md-3 pt-3">
             <h3 class="tittle text-center mb-lg-5 mb-3">
-                <span>Get More info</span> About Us
-            </h3>
+                <span>Get More info</span> About Us</h3>
             <?php 
                 $query = mysqli_query($con, "SELECT * FROM tblpage WHERE PageType='aboutus'");
                 while ($row = mysqli_fetch_array($query)) {
