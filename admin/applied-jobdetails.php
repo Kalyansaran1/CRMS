@@ -72,71 +72,78 @@ if (strlen($_SESSION['crmsaid']) == 0) {
                                 while ($row = mysqli_fetch_array($ret)) {
                                 ?>
 <table class="table table-bordered table-hover data-tables">
-    <tr>
-        <th scope="row" width="200">Job Title</th>
-        <td><?php echo $row['JobTitle']; ?></td>
-        <th scope="row">Company Name</th>
-        <td><?php echo $row['CompanyName']; ?></td>
-    </tr>
-    <tr>
-        <th scope="row">Monthly In-hand Salary</th>
-        <td colspan="3"><?php echo $row['MonthlySalary']; ?></td>
-    </tr>
-    <tr>
-        <th scope="row">Job Descriptions</th>
-        <td colspan="3"><?php echo $row['JobDescriptions']; ?></td>
-    </tr>
-    <tr>
-        <th scope="row">Job Location</th>
-        <td><?php echo $row['JobLocation']; ?></td>
-        <th scope="row">No of Opening</th>
-        <td><?php echo $row['NoofOpenings']; ?></td>
-    </tr>
-    <tr>
-        <th scope="row">Apply Date</th>
-        <td><?php echo $row['ApplyDate']; ?></td>
-        <th scope="row">Last Date</th>
-        <td><?php echo $row['LastDate']; ?></td>
-    </tr>
-    <tr>
-        <th colspan="4">Information of Candidate</th>
-    </tr>
-    <tr>
-        <th scope="row">Full Name</th>
-        <td><?php echo $row['FullName']; ?></td>
-        <th scope="row">Email</th>
-        <td><?php echo $row['Email']; ?></td>
-    </tr>
-    <tr>
-        <th scope="row">Mobile Number</th>
-        <td><?php echo $row['MobileNumber']; ?></td>
-        <th scope="row">Student ID</th>
-        <td><?php echo $row['StudentID']; ?></td>
-    </tr>
-    <tr>
-        <th scope="row">Gender</th>
-        <td><?php echo $row['Gender']; ?></td>
-        <th scope="row">Address</th>
-        <td><?php echo $row['Address']; ?></td>
-    </tr>
-    <tr>
-        <th scope="row">Age</th>
-        <td><?php echo $row['Age']; ?></td>
-        <th scope="row">DOB</th>
-        <td><?php echo $row['DOB']; ?></td>
-    </tr>
-    <tr>
-        <th scope="row">Image</th>
-        <td><img src="../user/images/<?php echo $row['Image']; ?>" width="200" height="150" alt="User Image"></td>
-        <th scope="row">Education Detail</th>
-        <td><a href="view-education-detail.php?eduid=<?php echo $row['uid']; ?>&uname=<?php echo $row['FullName']; ?>" target="_blank">My Education Details</a></td>
-    </tr>
-    <tr>
-        <th scope="row">Resume</th>
-        <td><a href="../user/images/<?php echo $row['Resume']; ?>" target="_blank">Download</a></td>
-        <th scope="row">Status</th>
-        <td><?php echo ($row['Status'] == '') ? 'Not Responded Yet' : $row['Status']; ?></td>
-    </tr>
+    <thead>
+        <tr>
+            <th scope="col" colspan="4">Job Information</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Job Title</th>
+            <td><?php echo $row['JobTitle']; ?></td>
+            <th scope="row">Company Name</th>
+            <td><?php echo $row['CompanyName']; ?></td>
+        </tr>
+        <tr>
+            <th scope="row">Monthly In-hand Salary</th>
+            <td colspan="3"><?php echo $row['MonthlySalary']; ?></td>
+        </tr>
+        <tr>
+            <th scope="row">Job Descriptions</th>
+            <td colspan="3"><?php echo $row['JobDescriptions']; ?></td>
+        </tr>
+        <tr>
+            <th scope="row">Job Location</th>
+            <td><?php echo $row['JobLocation']; ?></td>
+            <th scope="row">No of Opening</th>
+            <td><?php echo $row['NoofOpenings']; ?></td>
+        </tr>
+        <tr>
+            <th scope="row">Apply Date</th>
+            <td><?php echo $row['ApplyDate']; ?></td>
+            <th scope="row">Last Date</th>
+            <td><?php echo $row['LastDate']; ?></td>
+        </tr>
+        <tr>
+            <th scope="col" colspan="4">Information of Candidate</th>
+        </tr>
+        <tr>
+            <th scope="row">Full Name</th>
+            <td><?php echo $row['FullName']; ?></td>
+            <th scope="row">Email</th>
+            <td><?php echo $row['Email']; ?></td>
+        </tr>
+        <tr>
+            <th scope="row">Mobile Number</th>
+            <td><?php echo $row['MobileNumber']; ?></td>
+            <th scope="row">Student ID</th>
+            <td><?php echo $row['StudentID']; ?></td>
+        </tr>
+        <tr>
+            <th scope="row">Gender</th>
+            <td><?php echo $row['Gender']; ?></td>
+            <th scope="row">Address</th>
+            <td><?php echo $row['Address']; ?></td>
+        </tr>
+        <tr>
+            <th scope="row">Age</th>
+            <td><?php echo $row['Age']; ?></td>
+            <th scope="row">DOB</th>
+            <td><?php echo $row['DOB']; ?></td>
+        </tr>
+        <tr>
+            <th scope="row">Image</th>
+            <td><img src="../user/images/<?php echo $row['Image']; ?>" width="200" height="150" alt="User Image"></td>
+            <th scope="row">Education Detail</th>
+            <td><a href="view-education-detail.php?eduid=<?php echo $row['uid']; ?>&uname=<?php echo $row['FullName']; ?>" target="_blank">My Education Details</a></td>
+        </tr>
+        <tr>
+            <th scope="row">Resume</th>
+            <td><a href="../user/images/<?php echo $row['Resume']; ?>" target="_blank">Download</a></td>
+            <th scope="row">Status</th>
+            <td><?php echo ($row['Status'] == '') ? 'Not Responded Yet' : $row['Status']; ?></td>
+        </tr>
+    </tbody>
 </table>
 
 <?php
@@ -145,15 +152,18 @@ $retMsg = mysqli_query($con, "SELECT tblmessage.Message, tblmessage.Status AS co
 $cnt = 1;
 ?>
 <table id="datatable" class="table table-bordered dt-responsive nowrap" style="width: 100%;">
-    <tr align="center">
-        <th colspan="4" style="font-size:18px">Application History</th>
-    </tr>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Message</th>
-        <th scope="col">Status</th>
-        <th scope="col">Time</th>
-    </tr>
+    <thead>
+        <tr>
+            <th scope="col" colspan="4" style="font-size:18px; text-align:center;">Application History</th>
+        </tr>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Message</th>
+            <th scope="col">Status</th>
+            <th scope="col">Time</th>
+        </tr>
+    </thead>
+    <tbody>
     <?php while ($row = mysqli_fetch_array($retMsg)) { ?>
         <tr>
             <td><?php echo $cnt++; ?></td>
@@ -162,6 +172,7 @@ $cnt = 1;
             <td><?php echo $row['ResponseDate']; ?></td>
         </tr>
     <?php } ?>
+    </tbody>
 </table>
 <?php } ?>
 <?php } ?>
@@ -177,4 +188,4 @@ $cnt = 1;
 <script src="assets/js/app.js"></script>
 </body>
 </html>
-<?php } ?
+<?php } ?>
