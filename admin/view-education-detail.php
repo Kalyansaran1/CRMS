@@ -1,19 +1,19 @@
 <?php
 session_start();
 error_reporting(0);
-include('includes/dbconnection.php');
-if (strlen($_SESSION['crmsaid']==0)) {
-  header('location:logout.php');
-  } else{
+include_once 'includes/dbconnection.php';
 
+if (strlen($_SESSION['crmsaid']) == 0) {
+    header('location:logout.php');
+} else {
+    $vid = $_GET['viewid'];
+    $ret = mysqli_query($con, "UPDATE tblmessage SET IsRead='1' WHERE AppID='$vid'");
+?>
 
-  ?>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-   
-    <title>Campus Recruitment Management System-Education Detail</title>
-    <!-- CSS -->
+    <title>Campus Recruitment Management System - History of Applied Jobs</title>
     <link rel="stylesheet" href="assets/css/app.css">
     <style>
         .loader {
@@ -26,7 +26,6 @@ if (strlen($_SESSION['crmsaid']==0)) {
             z-index: 9998;
             text-align: center;
         }
-
         .plane-container {
             position: absolute;
             top: 50%;
@@ -35,115 +34,151 @@ if (strlen($_SESSION['crmsaid']==0)) {
     </style>
 </head>
 <body class="light">
-<!-- Pre loader -->
 <div id="loader" class="loader">
     <div class="plane-container">
-        <div class="preloader-wrapper small active">
-
-
-
-
-        </div>
+        <div class="preloader-wrapper small active"></div>
     </div>
 </div>
 <div id="app">
-<?php include_once('includes/sidebar.php');?>
-<!--Sidebar End-->
-<?php include_once('includes/header.php');?>
+    <?php include_once('includes/sidebar.php'); ?>
+    <?php include_once('includes/header.php'); ?>
     <div class="page has-sidebar-left">
+        <div class="animatedParent animateOnce">
+            <div class="container-fluid my-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <header class="blue accent-3 relative">
+                                <div class="container-fluid text-white">
+                                    <div class="row p-t-b-10">
+                                        <div class="col">
+                                            <h4><i class="icon-package"></i> Details of Applied Jobs</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="card-body b-b">
+                                <?php
+                                $vid = $_GET['viewid'];
+                                $ret = mysqli_query($con, "SELECT tblvacancy.ID, tblvacancy.JobTitle, tblvacancy.MonthlySalary,
+                                    tblvacancy.JobDescriptions, tblvacancy.NoofOpenings, tblvacancy.JobLocation, tblvacancy.ApplyDate,
+                                    tblvacancy.LastDate, tblapplyjob.ID, tblapplyjob.Resume, tblapplyjob.Message, tblapplyjob.Remark,
+                                    tblapplyjob.Status, tbluser.ID AS uid, tbluser.FullName, tbluser.Email, tbluser.MobileNumber,
+                                    tbluser.StudentID, tbluser.Gender, tbluser.Address, tbluser.Age, tbluser.DOB, tbluser.Image,
+                                    tblcompany.CompanyName FROM tblapplyjob JOIN tbluser ON tblapplyjob.UserId=tbluser.ID
+                                    JOIN tblvacancy ON tblapplyjob.JobId=tblvacancy.ID JOIN tblcompany ON tblcompany.ID=tblvacancy.CompanyID
+                                    WHERE tblapplyjob.ID='$vid'");
 
+                                while ($row = mysqli_fetch_array($ret)) {
+                                ?>
+                                <table class="table table-bordered table-hover data-tables">
+                                    <tr>
+                                        <th width="200" scope="row">Job Title</th>
+                                        <td><?php echo $row['JobTitle']; ?></td>
+                                        <th scope="row">Company Name</th>
+                                        <td><?php echo $row['CompanyName']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Monthly In-hand Salary</th>
+                                        <td colspan="3"><?php echo $row['MonthlySalary']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Job Descriptions</th>
+                                        <td colspan="3"><?php echo $row['JobDescriptions']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Job Location</th>
+                                        <td><?php echo $row['JobLocation']; ?></td>
+                                        <th scope="row">No of Opening</th>
+                                        <td><?php echo $row['NoofOpenings']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Apply Date</th>
+                                        <td><?php echo $row['ApplyDate']; ?></td>
+                                        <th scope="row">Last Date</th>
+                                        <td><?php echo $row['LastDate']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col" colspan="4">Information of Candidate</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Full Name</th>
+                                        <td><?php echo $row['FullName']; ?></td>
+                                        <th scope="row">Email</th>
+                                        <td><?php echo $row['Email']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Mobile Number</th>
+                                        <td><?php echo $row['MobileNumber']; ?></td>
+                                        <th scope="row">Student ID</th>
+                                        <td><?php echo $row['StudentID']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Gender</th>
+                                        <td><?php echo $row['Gender']; ?></td>
+                                        <th scope="row">Address</th>
+                                        <td><?php echo $row['Address']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Age</th>
+                                        <td><?php echo $row['Age']; ?></td>
+                                        <th scope="row">DOB</th>
+                                        <td><?php echo $row['DOB']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Image</th>
+                                        <td><img src="../user/images/<?php echo $row['Image']; ?>" width="200" height="150"></td>
+                                        <th scope="row">Education Detail</th>
+                                        <td><a href="view-education-detail.php?eduid=<?php echo $row['uid']; ?>&uname=<?php echo $row['FullName']; ?>" target="_blank">My Education Details</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Resume</th>
+                                        <td><a href="../user/images/<?php echo $row['Resume']; ?>" target="_blank">Download</a></td>
+                                        <th scope="row">Status</th>
+                                        <td><?php echo ($row['Status'] == '') ? 'Not Responded Yet' : $row['Status']; ?></td>
+                                    </tr>
+                                </table>
 
-    <div class="animatedParent animateOnce">
-        <div class="container-fluid my-3">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <header class="blue accent-3 relative">
-        <div class="container-fluid text-white">
-            <div class="row p-t-b-10 ">
-                <div class="col">
-                    <h4>
-                        <i class="icon-package"></i>
-                        <?php echo $_GET['uname'];?>'s Education Details
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </header>
-<div class="card-body b-b">                       
-  <?php
- $edid=$_GET['eduid'];
-$ret=mysqli_query($con,"select tbluser.ID, tbleducation.UserID,tbleducation.SecondaryBoard,tbleducation.SecondaryBoardyop,tbleducation.SecondaryBoardper,tbleducation.SecondaryBoardcgpa,tbleducation.SSecondaryBoard,tbleducation.SSecondaryBoardyop,tbleducation.SSecondaryBoardper,tbleducation.SSecondaryBoardcgpa,tbleducation.GraUni,tbleducation.GraUniyop,tbleducation.GraUnidper,tbleducation.GraUnicgpa,tbleducation.PGUni,tbleducation.PGUniyop,tbleducation.PGUniper,tbleducation.PGUnicgpa,tbleducation.ExtraCurriculars,tbleducation.OtherAchivement  from   tbleducation join tbluser on tbleducation.UserID=tbluser.ID where tbleducation.UserID='$edid'");
-$cnt=1;
-while ($row=mysqli_fetch_array($ret)) {
-
-?>
-<table class="table table-bordered table-hover data-tables">
-  
-<tr>
-  <th>#</th>
-   <th>Board / University</th>
-    <th>Year</th>
-     <th>Percentage</th>
-       <th>CGPA</th>
-
-</tr>
-<tr>
-<th>10th(Secondary)</th>
-<td><?php  echo $row['SecondaryBoard'];?></td>
-<td><?php  echo $row['SecondaryBoardyop'];?></td>
-<td><?php  echo $row['SecondaryBoardper'];?></td>
-<td><?php  echo $row['SecondaryBoardcgpa'];?></td>
-</tr>
-<tr>
-<th>12th(Senior Secondary)</th>
-<td><?php  echo $row['SSecondaryBoard'];?></td>
-<td><?php  echo $row['SSecondaryBoardyop'];?></td>
-<td><?php  echo $row['SSecondaryBoardper'];?></td>
-<td><?php  echo $row['SSecondaryBoardcgpa'];?></td>
-</tr>
-<tr>
-<th>Graduation</th>
-<td><?php  echo $row['GraUni'];?></td>
-<td><?php  echo $row['GraUniyop'];?></td>
-<td><?php  echo $row['GraUnidper'];?></td>
-<td><?php  echo $row['GraUnicgpa'];?></td>
-
-</tr>
-<tr>
-<th>Post Graduation</th>
-<td><?php  echo $row['PGUni'];?></td>
-<td><?php  echo $row['PGUniyop'];?></td>
-<td><?php  echo $row['PGUniper'];?></td>
-<td><?php  echo $row['PGUnicgpa'];?></td>
-</tr>
-
-</table>
-<table class="table table-bordered table-hover data-tables">
-    <tr>
-<th>Extra Curriculars</th>
-<td> <?php  echo $row['ExtraCurriculars'];?></td>
-</tr>
-<tr>
-<th>Other Achivement/Certificate/Qualification</th>
-<td><?php  echo $row['OtherAchivement'];?></td>
-</tr>
-</table>
-<?php } ?>
+                                <?php
+                                if ($row['Status'] != '0') {
+                                    $retMsg = mysqli_query($con, "SELECT tblmessage.Message, tblmessage.Status AS comstatus, tblmessage.ResponseDate FROM tblapplyjob LEFT JOIN tblmessage ON tblmessage.AppID=tblapplyjob.ID WHERE tblapplyjob.ID='$vid'");
+                                    $cnt = 1;
+                                ?>
+                                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="width: 100%;">
+                                    <thead>
+                                        <tr align="center">
+                                            <th scope="col" colspan="4" style="font-size:18px">Application History</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Message</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php while ($row = mysqli_fetch_array($retMsg)) { ?>
+                                        <tr>
+                                            <td><?php echo $cnt++; ?></td>
+                                            <td><?php echo $row['Message']; ?></td>
+                                            <td><?php echo $row['comstatus']; ?></td>
+                                            <td><?php echo $row['ResponseDate']; ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                    </tbody>
+                                </table>
+                                <?php } ?>
+                                <?php } ?>
+                            </div>
                         </div>
-              
                     </div>
                 </div>
-             
             </div>
         </div>
     </div>
 </div>
-
 <div class="control-sidebar-bg shadow white fixed"></div>
-</div>
-<!--/#app -->
 <script src="assets/js/app.js"></script>
 </body>
 </html>
-<?php }  ?>
+<?php } ?>
