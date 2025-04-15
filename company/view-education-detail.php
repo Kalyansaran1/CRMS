@@ -81,29 +81,29 @@ while ($row=mysqli_fetch_array($ret)) {
 <table class="table table-bordered table-hover data-tables">
   
 <tr>
-  <th>#</th>
-   <th>Board / University</th>
-    <th>Year</th>
-     <th>Percentage</th>
-       <th>CGPA</th>
+  <th scope="col">#</th>
+   <th scope="col">Board / University</th>
+    <th scope="col">Year</th>
+     <th scope="col">Percentage</th>
+       <th scope="col">CGPA</th>
 
 </tr>
 <tr>
-<th>10th(Secondary)</th>
+<th scope="col">10th(Secondary)</th>
 <td><?php  echo $row['SecondaryBoard'];?></td>
 <td><?php  echo $row['SecondaryBoardyop'];?></td>
 <td><?php  echo $row['SecondaryBoardper'];?></td>
 <td><?php  echo $row['SecondaryBoardcgpa'];?></td>
 </tr>
 <tr>
-<th>12th(Senior Secondary)</th>
+<th scope="col">12th(Senior Secondary)</th>
 <td><?php  echo $row['SSecondaryBoard'];?></td>
 <td><?php  echo $row['SSecondaryBoardyop'];?></td>
 <td><?php  echo $row['SSecondaryBoardper'];?></td>
 <td><?php  echo $row['SSecondaryBoardcgpa'];?></td>
 </tr>
 <tr>
-<th>Graduation</th>
+<th scope="col">Graduation</th>
 <td><?php  echo $row['GraUni'];?></td>
 <td><?php  echo $row['GraUniyop'];?></td>
 <td><?php  echo $row['GraUnidper'];?></td>
@@ -111,7 +111,7 @@ while ($row=mysqli_fetch_array($ret)) {
 
 </tr>
 <tr>
-<th>Post Graduation</th>
+<th scope="col">Post Graduation</th>
 <td><?php  echo $row['PGUni'];?></td>
 <td><?php  echo $row['PGUniyop'];?></td>
 <td><?php  echo $row['PGUniper'];?></td>
@@ -121,11 +121,11 @@ while ($row=mysqli_fetch_array($ret)) {
 </table>
 <table class="table table-bordered table-hover data-tables">
     <tr>
-<th>Extra Curriculars</th>
+<th scope="col">Extra Curriculars</th>
 <td> <?php  echo $row['ExtraCurriculars'];?></td>
 </tr>
 <tr>
-<th>Other Achivement/Certificate/Qualification</th>
+<th scope="col">Other Achivement/Certificate/Qualification</th>
 <td><?php  echo $row['OtherAchivement'];?></td>
 </tr>
 </table>

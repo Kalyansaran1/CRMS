@@ -117,36 +117,36 @@ while ($row=mysqli_fetch_array($ret)) {
 ?>
                                 <table class="table table-bordered table-hover data-tables">
                                     <tr>
-  <th>Company Name</th>
+  <th scope="col">Company Name</th>
   <td><?php  echo $row['CompanyName'];?></td>
   </tr>
   <tr>
-  <th>Contact Person</th>
+  <th scope="col">Contact Person</th>
   <td><?php  echo $row['ContactPerson'];?></td>
   </tr>
    <tr>
-  <th>Company URL</th>
+  <th scope="col">Company URL</th>
   <td><?php  echo $row['CompanyUrl'];?></td>
   </tr>
   <tr>
-  <th>Company Address</th>
+  <th scope="col">Company Address</th>
   <td><?php  echo $row['CompanyAddress'];?></td>
   </tr>
  
   <tr>
-  <th>Mobile Number</th>
+  <th scope="col">Mobile Number</th>
   <td><?php  echo $row['MobileNumber'];?></td>
   </tr>
   <tr>
-  <th>Email address</th>
+  <th scope="col">Email address</th>
   <td><?php  echo $row['CompanyEmail'];?></td>
   </tr>
   <tr>
-  <th>Company Logo</th>
+  <th scope="col">Company Logo</th>
   <td><img src="../company/images/<?php echo $row['CompanyLogo'];?>" width="200" height="150" value="<?php  echo $row['CompanyLogo'];?>"></td>
   </tr>
   <tr>
-  <th>Company Registration Date</th>
+  <th scope="col">Company Registration Date</th>
   <td><?php  echo $row['CompanyRegdate'];?></td>
   </tr>
 

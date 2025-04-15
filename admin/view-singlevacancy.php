@@ -122,37 +122,37 @@ while ($row=mysqli_fetch_array($ret)) {
 ?>
 <table class="table table-bordered table-hover data-tables">
                                     <tr>
-  <th>Job Title</th>
+  <th scope="col">Job Title</th>
   <td><?php  echo $row['JobTitle'];?></td>
   </tr>
   <tr>
-  <th>Company Name</th>
+  <th scope="col">Company Name</th>
   <td><?php  echo $row['CompanyName'];?></td>
   </tr>
   <tr>
-  <th>Monthly In-hand Salary</th>
+  <th scope="col">Monthly In-hand Salary</th>
   <td><?php  echo $row['MonthlySalary'];?></td>
   </tr>
    <tr>
-  <th>Job Descriptions</th>
+  <th scope="col">Job Descriptions</th>
   <td><?php  echo $row['JobDescriptions'];?></td>
   </tr>
   <tr>
-  <th>Job Location</th>
+  <th scope="col">Job Location</th>
   <td><?php  echo $row['JobLocation'];?></td>
   </tr>
  
   <tr>
-  <th>No of Opening</th>
+  <th scope="col">No of Opening</th>
   <td><?php  echo $row['NoofOpenings'];?></td>
   </tr>
   <tr>
-  <th>Apply Date</th>
+  <th scope="col">Apply Date</th>
   <td><?php  echo $row['ApplyDate'];?></td>
   </tr>
   
   <tr>
-  <th>Last Date</th>
+  <th scope="col">Last Date</th>
   <td><?php  echo $row['LastDate'];?></td>
   </tr>
 

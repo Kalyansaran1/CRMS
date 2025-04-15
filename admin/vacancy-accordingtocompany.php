@@ -75,13 +75,13 @@ $tdate=$_POST['todate'];
 <h4 align="center" style="color:blue">Company Vacancy Count Report from <?php echo $fdate?> to <?php echo $tdate?></h4>
                         <table class="table table-bordered table-hover data-tables"
                                data-options='{ "paging": false; "searching":false}'>
-                            <thead>
+                            <th scope="col"ead>
                              <tr>
-                  <th>S.NO</th>
+                  <th scope="col">S.NO</th>
             
-                  <th>Company Name</th>
-                    <th>Company Registered Date</th>
-                    <th>Number of Vacancy Listed</th>       
+                  <th scope="col">Company Name</th>
+                    <th scope="col">Company Registered Date</th>
+                    <th scope="col">Number of Vacancy Listed</th>       
                    
                 </tr>
                             </thead>

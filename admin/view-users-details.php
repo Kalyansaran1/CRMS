@@ -117,44 +117,44 @@ while ($row=mysqli_fetch_array($ret)) {
 ?>
                                 <table class="table table-bordered table-hover data-tables">
                                     <tr>
-  <th>Full Name</th>
+  <th scope="col">Full Name</th>
   <td><?php  echo $row['FullName'];?></td>
   </tr>
   <tr>
-  <th>Email</th>
+  <th scope="col">Email</th>
   <td><?php  echo $row['Email'];?></td>
   </tr>
    <tr>
-  <th>MobileNumber</th>
+  <th scope="col">MobileNumber</th>
   <td><?php  echo $row['MobileNumber'];?></td>
   </tr>
   <tr>
-  <th>Student ID</th>
+  <th scope="col">Student ID</th>
   <td><?php  echo $row['StudentID'];?></td>
   </tr>
  
   <tr>
-  <th>Gender</th>
+  <th scope="col">Gender</th>
   <td><?php  echo $row['Gender'];?></td>
   </tr>
   <tr>
-  <th>Address</th>
+  <th scope="col">Address</th>
   <td><?php  echo $row['Address'];?></td>
   </tr>
   <tr>
-  <th>Age</th>
+  <th scope="col">Age</th>
   <td><?php  echo $row['Age'];?></td>
   </tr>
   <tr>
-  <th>DOB</th>
+  <th scope="col">DOB</th>
   <td><?php  echo $row['DOB'];?></td>
   </tr>
   <tr>
-  <th>Candidate Pic</th>
+  <th scope="col">Candidate Pic</th>
   <td><img src="../user/images/<?php echo $row['Image'];?>" width="200" height="150" value="<?php  echo $row['Image'];?>"></td>
   </tr>
   <tr>
-  <th>User Registration Date</th>
+  <th scope="col">User Registration Date</th>
   <td><?php  echo $row['UserRegdate'];?></td>
   </tr>
 

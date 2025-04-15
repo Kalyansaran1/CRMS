@@ -90,70 +90,70 @@ while ($row=mysqli_fetch_array($ret)) {
 ?>
 <table class="table table-bordered table-hover data-tables">
     <tr>
-  <th width="200">Job Title</th>
+  <th scope="col" width="200">Job Title</th>
   <td><?php  echo $row['JobTitle'];?></td>
  
-  <th>Company Name</th>
+  <th scope="col">Company Name</th>
   <td><?php  echo $row['CompanyName'];?></td>
   </tr>
   <tr>
-  <th>Monthly In-hand Salary</th>
+  <th scope="col">Monthly In-hand Salary</th>
   <td colspan="3"><?php  echo $row['MonthlySalary'];?></td>
   </tr>
    <tr>
-  <th>Job Descriptions</th>
+  <th scope="col">Job Descriptions</th>
   <td colspan="3"><?php  echo $row['JobDescriptions'];?></td>
   </tr>
   <tr>
-  <th>Job Location</th>
+  <th scope="col">Job Location</th>
   <td><?php  echo $row['JobLocation'];?></td>
 
-  <th>No of Opening</th>
+  <th scope="col">No of Opening</th>
   <td><?php  echo $row['NoofOpenings'];?></td>
   </tr>
   <tr>
-  <th>Apply Date</th>
+  <th scope="col">Apply Date</th>
   <td><?php  echo $row['ApplyDate'];?></td>
-  <th>Last Date</th>
+  <th scope="col">Last Date</th>
   <td><?php  echo $row['LastDate'];?></td>
   </tr>
   <tr>
-  <th>Full Name</th>
+  <th scope="col">Full Name</th>
   <td><?php  echo $row['FullName'];?></td>
-  <th>Email</th>
+  <th scope="col">Email</th>
   <td><?php  echo $row['Email'];?></td>
   </tr>
   <tr>
-  <th>Mobile Number</th>
+  <th scope="col">Mobile Number</th>
   <td><?php  echo $row['MobileNumber'];?></td>
-  <th>Student ID </th>
+  <th scope="col">Student ID </th>
   <td><?php  echo $row['StudentID'];?></td>
   </tr>
   <tr>
-  <th>Gender </th>
+  <th scope="col">Gender </th>
   <td><?php  echo $row['Gender'];?></td>
-  <th>Address </th>
+  <th scope="col">Address </th>
   <td><?php  echo $row['Address'];?></td>
 </tr>
 <tr>
-  <th>Age </th>
+  <th scope="col">Age </th>
   <td><?php  echo $row['Age'];?></td>
 
-  <th>DOB </th>
+  <th scope="col">DOB </th>
   <td><?php  echo $row['DOB'];?></td>
 </tr>
 <tr>
-  <th>Image </th>
+  <th scope="col">Image </th>
   <td><img src="images/<?php echo $row['Image'];?>" width="200" height="150" value="<?php  echo $row['Image'];?>"></td>
   
-  <th>Education Detail </th>
+  <th scope="col">Education Detail </th>
   <td><a href="view-education-detail.php?eduid=<?php echo $row['uid'];?>" target="_blank">My Education Details</a></td>
 </tr>
 <tr>
-  <th>Resume </th>
+  <th scope="col">Resume </th>
   <td> <a href ="images/<?php echo $row['Resume'];?>" width="200" height="150" value="<?php  echo $row['Resume'];?>" target="_blank">Download</a></td>
 
-    <th>Status</th>
+    <th scope="col">Status</th>
     <td> <?php  
 if($row['Status']=="")
 {
@@ -175,13 +175,13 @@ $cnt=1;
  ?>
 <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
   <tr align="center">
-   <th colspan="4" >Application History</th> 
+   <th scope="col" colspan="4" >Application History</th> 
   </tr>
   <tr>
-    <th>#</th>
-<th>Message</th>
-<th>Status</th>
-<th>Time</th>
+    <th scope="col">#</th>
+<th scope="col">Message</th>
+<th scope="col">Status</th>
+<th scope="col">Time</th>
 </tr>
 <?php  
 while ($row=mysqli_fetch_array($ret)) { 

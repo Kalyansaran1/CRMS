@@ -120,29 +120,29 @@ while ($row=mysqli_fetch_array($ret)) {
                                 <table class="table table-bordered table-hover data-tables">
   
 <tr>
-  <th>#</th>
-   <th>Board / University</th>
-    <th>Year</th>
-     <th>Percentage</th>
-       <th>CGPA</th>
+  <th scope="col">#</th>
+   <th scope="col">Board / University</th>
+    <th scope="col">Year</th>
+     <th scope="col">Percentage</th>
+       <th scope="col">CGPA</th>
 
 </tr>
 <tr>
-<th>10th(Secondary)</th>
+<th scope="col">10th(Secondary)</th>
 <td>   <input class="form-control white_bg" id="10thboard" name="10thboard" value="<?php  echo $row['SecondaryBoard'];?>"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="10thpyeaer" name="10thpyear" value="<?php  echo $row['SecondaryBoardyop'];?>"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="10thpercentage" name="10thpercentage" value="<?php  echo $row['SecondaryBoardper'];?>"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="10thcgpa" name="10thcgpa" value="<?php  echo $row['SecondaryBoardcgpa'];?>"  type="text" required='true'></td>
 </tr>
 <tr>
-<th>12th(Senior Secondary)</th>
+<th scope="col">12th(Senior Secondary)</th>
 <td>   <input class="form-control white_bg" id="12thboard" name="12thboard" value="<?php  echo $row['SSecondaryBoard'];?>"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="12thboard" name="12thpyear" value="<?php  echo $row['SSecondaryBoardyop'];?>"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="12thpercentage" name="12thpercentage" value="<?php  echo $row['SSecondaryBoardper'];?>"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="12thcgpa" name="12thcgpa" value="<?php  echo $row['SSecondaryBoardcgpa'];?>"  type="text" required='true'></td>
 </tr>
 <tr>
-<th>Graduation</th>
+<th scope="col">Graduation</th>
 <td>   <input class="form-control white_bg" id="graduation" name="graduation" value="<?php  echo $row['GraUni'];?>"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="graduationpyeaer" name="graduationpyeaer" value="<?php  echo $row['GraUniyop'];?>"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="graduationpercentage" name="graduationpercentage" value="<?php  echo $row['GraUnidper'];?>"  type="text" required='true'></td>
@@ -150,7 +150,7 @@ while ($row=mysqli_fetch_array($ret)) {
 
 </tr>
 <tr>
-<th>Post Graduation</th>
+<th scope="col">Post Graduation</th>
 <td>   <input class="form-control white_bg" id="postgraduation" name="postgraduation" value="<?php  echo $row['PGUni'];?>"  type="text" ></td>
 <td>   <input class="form-control white_bg" id="pgpyeaer" name="pgpyear" value="<?php  echo $row['PGUniyop'];?>"  type="text"></td>
 <td>   <input class="form-control white_bg" id="pgpercentage" name="pgpercentage" value="<?php  echo $row['PGUniper'];?>"  type="text" ></td>
@@ -160,11 +160,11 @@ while ($row=mysqli_fetch_array($ret)) {
 </table>
 <table class="table table-bordered table-hover data-tables">
     <tr>
-<th>Extra Curriculars</th>
+<th scope="col">Extra Curriculars</th>
 <td>   <input class="form-control white_bg" id="extracurr" name="extracurr" value="<?php  echo $row['ExtraCurriculars'];?>"  type="text" ></td>
 </tr>
 <tr>
-<th>Other Achivement/Certificate/Qualification</th>
+<th scope="col">Other Achivement/Certificate/Qualification</th>
 <td>   <input class="form-control white_bg" id="otherach" name="otherach" value="<?php  echo $row['OtherAchivement'];?>"  type="text" ></td>
 </tr>
 </table>

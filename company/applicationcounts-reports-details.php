@@ -77,7 +77,7 @@ $tdate=$_POST['todate'];
 ?>
 <h4 align="center" style="color:blue">Applications Counts Reports from <?php echo $fdate?> to <?php echo $tdate?></h4>
                         <table class="table table-bordered table-hover data-tables" border="1">
-                            <thead>
+                            <th scope="col"ead>
           <tr>
             <td>S.NO</td>
             <td>Job Title</td>

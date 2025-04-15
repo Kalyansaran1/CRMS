@@ -118,30 +118,30 @@ while ($row=mysqli_fetch_array($ret)) {
 
 <table class="table table-bordered table-hover data-tables">
     <tr>
-  <th width="200">Job Title</th>
+  <th scope="col" width="200">Job Title</th>
   <td><?php  echo $row['JobTitle'];?></td>
-  <th>Company Name</th>
+  <th scope="col">Company Name</th>
   <td><?php  echo $row['CompanyName'];?></td>
   </tr>
    <tr>
-  <th>Job Descriptions</th>
+  <th scope="col">Job Descriptions</th>
   <td colspan="3"><?php  echo $row['JobDescriptions'];?></td>
   </tr>
 
   <tr>
-  <th>Monthly In-hand Salary</th>
+  <th scope="col">Monthly In-hand Salary</th>
   <td><?php  echo $row['MonthlySalary'];?></td>
-  <th>Job Location</th>
+  <th scope="col">Job Location</th>
   <td><?php  echo $row['JobLocation'];?></td>
   </tr>
   <tr>
-  <th>No of Opening</th>
+  <th scope="col">No of Opening</th>
   <td colspan="3"><?php  echo $row['NoofOpenings'];?></td>
 </tr>
-  <th>Apply From Date</th>
+  <th scope="col">Apply From Date</th>
   <td><?php  echo $adate=$row['ApplyDate'];?></td>
 
-  <th>Last Date</th>
+  <th scope="col">Last Date</th>
   <td><?php  echo $ldate=$row['LastDate'];?></td>
   </tr>
 </table>
@@ -162,16 +162,16 @@ if($cdate < $aadate)
 {
 ?>
   <tr>
-<th colspan="2" style="text-align:center; font-weight:bold; color:red; font-size:22px;">You can Apply for job after apply from date</th>
+<th scope="col" colspan="2" style="text-align:center; font-weight:bold; color:red; font-size:22px;">You can Apply for job after apply from date</th>
   </tr>
 <?php } elseif($cdate > $lldate) { ?>
       <tr>
-<th colspan="2" style="text-align:center; font-weight:bold; color:red; font-size:22px;">Job Last date is over</th>
+<th scope="col" colspan="2" style="text-align:center; font-weight:bold; color:red; font-size:22px;">Job Last date is over</th>
   </tr>
 <?php } else {?>
   <tr align="center">
     <tr>
-    <th>Upload Resume :</th>
+    <th scope="col">Upload Resume :</th>
     <td>
     <input type='file' name="resume" placeholder="resume" rows="12" cols="14" class="form-control wd-450" required="true"></td>
   </tr>

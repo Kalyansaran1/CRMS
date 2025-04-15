@@ -68,13 +68,13 @@ if (strlen($_SESSION['crmsuid']==0)) {
     </header> <br />
                         <table class="table table-bordered table-hover data-tables"
                                data-options='{ "paging": false; "searching":false}'>
-                            <thead>
+                            <th scope="col"ead>
                              <tr>
-                  <th>S.NO</th>
-            <th>Company Name</th>
-                  <th>Job Title</th>
-                    <th>Job Posting Date</th>       
-                   <th>Action</th>
+                  <th scope="col">S.NO</th>
+            <th scope="col">Company Name</th>
+                  <th scope="col">Job Title</th>
+                    <th scope="col">Job Posting Date</th>       
+                   <th scope="col">Action</th>
                 </tr>
 
                             </thead>

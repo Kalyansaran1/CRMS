@@ -76,13 +76,13 @@ $tdate=$_POST['todate'];
 <hr />
                         <table class="table table-bordered table-hover data-tables"
                                data-options='{ "paging": false; "searching":false}'>
-                            <thead>
+                            <th scope="col"ead>
                              <tr>
-                  <th>S.NO</th>
+                  <th scope="col">S.NO</th>
             
-                  <th>Company Name</th>
-                    <th>Company Mobile Number</th>
-                    <th>Company Registered Date</th>
+                  <th scope="col">Company Name</th>
+                    <th scope="col">Company Mobile Number</th>
+                    <th scope="col">Company Registered Date</th>
                 </tr>
                             </thead>
                             <tbody>

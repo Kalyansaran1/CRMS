@@ -115,16 +115,16 @@ while($row=mysqli_fetch_array($query)){
 <p style="font-size:16px; color:red" align="center">Your Education Details has already added.</p>
 <table class="table table-bordered table-hover data-tables">
 <tr>
-  <th>#</th>
-   <th>Board / University</th>
-    <th>Year</th>
-     <th>Percentage</th>
-       <th>CGPA</th>
+  <th scope="col">#</th>
+   <th scope="col">Board / University</th>
+    <th scope="col">Year</th>
+     <th scope="col">Percentage</th>
+       <th scope="col">CGPA</th>
 
 </tr>
 
 
-<th>10th(Secondary)</th>
+<th scope="col">10th(Secondary)</th>
   <td><?php echo $row['SecondaryBoard'];?></td>
   <td><?php echo $row['SecondaryBoardyop'];?></td>
    <td><?php echo $row['SecondaryBoardper'];?></td>
@@ -132,14 +132,14 @@ while($row=mysqli_fetch_array($query)){
 </tr>
 
 <tr>
-  <th>12th(Senior Secondary)</th>
+  <th scope="col">12th(Senior Secondary)</th>
   <td><?php echo $row['SSecondaryBoard'];?></td>
    <td><?php echo $row['SSecondaryBoardyop'];?></td>
    <td><?php echo $row['SSecondaryBoardper'];?></td>
     <td><?php echo $row['SSecondaryBoardcgpa'];?></td>
 </tr>
 <tr>
-  <th>Graduation</th>
+  <th scope="col">Graduation</th>
   <td><?php echo $row['GraUni'];?></td>
   <td><?php echo $row['GraUniyop'];?></td>
   <td><?php echo $row['GraUnidper'];?></td>
@@ -147,7 +147,7 @@ while($row=mysqli_fetch_array($query)){
 </tr>
 
 <tr>
-  <th>Post Graduation</th>
+  <th scope="col">Post Graduation</th>
   <td><?php echo $row['PGUni'];?></td>
   <td><?php echo $row['PGUniyop'];?></td>
   <td><?php echo $row['PGUniper'];?></td>
@@ -164,29 +164,29 @@ while($row=mysqli_fetch_array($query)){
                                 <table class="table table-bordered table-hover data-tables">
   
 <tr>
-  <th>#</th>
-   <th>Board / University</th>
-    <th>Year</th>
-     <th>Percentage</th>
-       <th>CGPA</th>
+  <th scope="col">#</th>
+   <th scope="col">Board / University</th>
+    <th scope="col">Year</th>
+     <th scope="col">Percentage</th>
+       <th scope="col">CGPA</th>
 
 </tr>
 <tr>
-<th>10th(Secondary)</th>
+<th scope="col">10th(Secondary)</th>
 <td>   <input class="form-control white_bg" id="10thboard" name="10thboard" placeholder="Board / University"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="10thpyeaer" name="10thpyear" placeholder="Year"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="10thpercentage" name="10thpercentage" placeholder="Percentage"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="10thcgpa" name="10thcgpa" placeholder="CGPA"  type="text" required='true'></td>
 </tr>
 <tr>
-<th>12th(Senior Secondary)</th>
+<th scope="col">12th(Senior Secondary)</th>
 <td>   <input class="form-control white_bg" id="12thboard" name="12thboard" placeholder="Board / University"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="12thboard" name="12thpyear" placeholder="Year"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="12thpercentage" name="12thpercentage" placeholder="Percentage"  type="text" required='true'></td>
 <td>   <input class="form-control white_bg" id="12thcgpa" name="12thcgpa" placeholder="CGPA"  type="text" required='true'></td>
 </tr>
 <tr>
-<th>Graduation</th>
+<th scope="col">Graduation</th>
 <td>   <input class="form-control white_bg" id="graduation" name="graduation" placeholder="Board / University"  type="text"></td>
 <td>   <input class="form-control white_bg" id="graduationpyeaer" name="graduationpyeaer" placeholder="Year"  type="text"></td>
 <td>   <input class="form-control white_bg" id="graduationpercentage" name="graduationpercentage" placeholder="Percentage"  type="text"></td>
@@ -194,7 +194,7 @@ while($row=mysqli_fetch_array($query)){
 
 </tr>
 <tr>
-<th>Post Graduation</th>
+<th scope="col">Post Graduation</th>
 <td>   <input class="form-control white_bg" id="postgraduation" name="postgraduation" placeholder="Board / University"  type="text" ></td>
 <td>   <input class="form-control white_bg" id="pgpyeaer" name="pgpyear" placeholder="Year"  type="text"></td>
 <td>   <input class="form-control white_bg" id="pgpercentage" name="pgpercentage" placeholder="Percentage"  type="text" ></td>
@@ -204,11 +204,11 @@ while($row=mysqli_fetch_array($query)){
 </table>
 <table class="table table-bordered table-hover data-tables">
     <tr>
-<th>Extra Curriculars</th>
+<th scope="col">Extra Curriculars</th>
 <td>   <input class="form-control white_bg" id="extracurr" name="extracurr" placeholder="Extra Curriculars"  type="text" ></td>
 </tr>
 <tr>
-<th>Other Achivement/Certificate/Qualification</th>
+<th scope="col">Other Achivement/Certificate/Qualification</th>
 <td>   <input class="form-control white_bg" id="otherach" name="otherach" placeholder="Other Achivement/Certificate/Qualification"  type="text" ></td>
 </tr>
 </table>
